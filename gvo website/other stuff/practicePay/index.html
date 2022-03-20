@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="practicePayStyle.css">
+    <title>Practice Pay</title>
+  </head>
+  <body>
+      <img src="gvoLogo.png" alt="" class="ml-4 mt-3">
+      <div class="center hideform paymentForm">
+            <a id="close" class="closeBtn">X</a>
+                <form>
+                    <div class="form-container">
+                        <div class="personal-information">
+                        <h3 class="paymentTitle">Payment Information</h3>
+                        </div> 
+                        <div class="card-wrapper my-4 mx-3"></div>
+                        
+                        <input id="input-field" type="text"  name="number" placeholder="Card Number"/>
+                        <input id="column-left" type="text" name="expiry" placeholder="MM / YY"/>
+                        <input id="column-right" type="text" name="cvc" placeholder="CCV"/>
+
+                        
+                    </div>
+                </form>
+                        
+            
+            <input id="input-button " class="payBtn" type="submit" value="Submit"/>
+            
+        </div>
+    <div class="container practiceText">
+        <h1 class="practiceH1 text-center font-weight-bolder">Good Vibes Only Practice Page</h1>
+        <div class="horiz-line mt-3 mb-3 mx-auto"></div>
+        <h2 class="practiceH2 text-center">Never Miss Another Drop With Our State</h2>
+        <h2 class="practiceH2 text-center">Of the Art Tool To Help You Cop</h2>
+        <div class="box">
+            <a href="#" class="btn btn-white btn-animation-1 practiceText" id="show">Click Me!</a> 
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/121761/jquery.card.js"></script>
+    <script>
+        $('#show').on('click', function () {
+            $('.center').show();
+            $(this).hide();
+            $('.practiceText').addClass('blur');
+        })
+
+        $('#close').on('click', function () {
+            $('.center').hide();
+            $('#show').show();
+            $('.practiceText').removeClass('blur');
+        })
+        $('#submit').on('click', function () {
+            $('.center').hide();
+            $('#show').show();
+        })
+        new Card({
+            form: document.querySelector('form'),
+            container: '.card-wrapper'
+        });
+        //"1111111111111111".replace(/(.{4})/g,"$1 ");
+    </script>
+  </body>
+</html>
